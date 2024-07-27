@@ -9,32 +9,26 @@
  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
  <script>
      $(document).ready(function () {
-         // Handle nav link clicks
          $('.nav-link').click(function () {
              var target = $(this).attr('data-target');
-             $('.form-section').hide(); // Hide all sections
-             $(target).show(); // Show the target section
-
-             // Remove 'active' class from all nav links and add it to the clicked one
+             $('.form-section').hide(); 
+             $(target).show(); 
              $('.nav-link').removeClass('active');
              $(this).addClass('active');
          });
 
-         // Handle next button clicks
          $('.next-button').click(function () {
              var target = $(this).attr('data-target');
-             $('.form-section').hide(); // Hide all sections
-             $(target).show(); // Show the target section
+             $('.form-section').hide(); 
+             $(target).show(); 
 
-             // Remove 'active' class from all nav links and add it to the corresponding nav link
              $('.nav-link').removeClass('active');
              $('a[data-target="' + target + '"]').addClass('active');
          });
 
-         // Initially hide all sections except the first one
          $('.form-section').hide();
-         $('#personalSection').show(); // Show the first section by default
-         $('.nav-link[data-target="#personalSection"]').addClass('active'); // Set the first nav link as active
+         $('#personalSection').show(); 
+         $('.nav-link[data-target="#personalSection"]').addClass('active');
      });
  </script>
 </head>

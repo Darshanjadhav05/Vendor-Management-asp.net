@@ -15,37 +15,17 @@ namespace Vendor_Management
 
         protected void NextButton1_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this, GetType(), "ShowSection", "showSection('gstSection');", true);
         }
 
         protected void NextButton2_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this, GetType(), "ShowSection", "showSection('bankSection');", true);
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
-            // Add your form submission logic here
-
-            // For example, validate file sizes
-            if (GSTCertificate.HasFile && GSTCertificate.PostedFile.ContentLength > 2 * 1024 * 1024)
-            {
-                ShowErrorMessage("GST Certificate file size should not exceed 2 MB.");
-                return;
-            }
-            // Add other validation and processing logic here
-            ShowSuccessMessage("Form submitted successfully!");
+            
         }
 
-        private void ShowErrorMessage(string message)
-        {
-            // Display error message to the user
-        }
-
-        private void ShowSuccessMessage(string message)
-        {
-            // Display success message to the user
-        }
-
+        
     }
 }
