@@ -150,15 +150,6 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox GSTNumber;
 
         /// <summary>
-        /// GSTCertificate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload GSTCertificate;
-
-        /// <summary>
         /// PanNumber control.
         /// </summary>
         /// <remarks>
@@ -166,51 +157,6 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PanNumber;
-
-        /// <summary>
-        /// PanCard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload PanCard;
-
-        /// <summary>
-        /// AadharNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AadharNumber;
-
-        /// <summary>
-        /// AadharCard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload AadharCard;
-
-        /// <summary>
-        /// IsMSME control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList IsMSME;
-
-        /// <summary>
-        /// MSMENumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MSMENumber;
 
         /// <summary>
         /// MSMECertificate control.
@@ -240,15 +186,6 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox BankName;
 
         /// <summary>
-        /// Branch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Branch;
-
-        /// <summary>
         /// IFSCCode control.
         /// </summary>
         /// <remarks>
@@ -258,15 +195,6 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox IFSCCode;
 
         /// <summary>
-        /// AccountHolderName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AccountHolderName;
-
-        /// <summary>
         /// AccountNumber control.
         /// </summary>
         /// <remarks>
@@ -274,6 +202,24 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox AccountNumber;
+
+        /// <summary>
+        /// Branch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Branch;
+
+        /// <summary>
+        /// AccountHolderName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AccountHolderName;
 
         /// <summary>
         /// CancelledCheque control.
