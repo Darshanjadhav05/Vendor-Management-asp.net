@@ -54,13 +54,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label for="CustomerName" class="col-sm-4 col-form-label">Vendor / Customer Name</label>
+                            <label for="CustomerName" class="col-sm-4 col-form-label">Customer Name</label>
                             <div class="col-sm-8">
                                 <asp:TextBox ID="VendorCustomerName" runat="server" CssClass="form-control" />
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="FirmName" class="col-sm-4 col-form-label">Firm/Organization Name</label>
+                            <label for="FirmName" class="col-sm-4 col-form-label">Organization Name</label>
                             <div class="col-sm-8">
                                 <asp:TextBox ID="FirmName" runat="server" CssClass="form-control" />
                             </div>
