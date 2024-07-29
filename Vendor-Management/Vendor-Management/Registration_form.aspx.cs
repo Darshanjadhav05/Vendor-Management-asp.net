@@ -21,11 +21,18 @@ namespace Vendor_Management
         {
         }
 
-        protected void SubmitButton_Click(object sender, EventArgs e)
-        {
-            
-        }
 
-        
+
+       
+
+        protected void SubmitButton_Click1(object sender, EventArgs e)
+        {
+
+            Response.Write("Form submitted successfully.<br />");
+
+         
+            Response.Write("Vendor Name: " + VendorCustomerName.Text + "<br />");
+            Response.Write("Organization Name: " + FirmName.Text + "<br />");
+        }
     }
 }

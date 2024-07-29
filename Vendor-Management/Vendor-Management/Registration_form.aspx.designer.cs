@@ -33,6 +33,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox VendorCustomerName;
 
         /// <summary>
+        /// rfvVendorCustomerName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvVendorCustomerName;
+
+        /// <summary>
         /// FirmName control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FirmName;
+
+        /// <summary>
+        /// rfvFirmName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFirmName;
 
         /// <summary>
         /// Area control.
@@ -51,6 +69,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox Area;
 
         /// <summary>
+        /// rfvArea control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvArea;
+
+        /// <summary>
         /// City control.
         /// </summary>
         /// <remarks>
@@ -58,6 +85,15 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox City;
+
+        /// <summary>
+        /// rfvCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCity;
 
         /// <summary>
         /// District control.
@@ -69,6 +105,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox District;
 
         /// <summary>
+        /// rfvDistrict control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDistrict;
+
+        /// <summary>
         /// State control.
         /// </summary>
         /// <remarks>
@@ -76,6 +121,15 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox State;
+
+        /// <summary>
+        /// rfvState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvState;
 
         /// <summary>
         /// Country control.
@@ -87,6 +141,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox Country;
 
         /// <summary>
+        /// rfvCountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCountry;
+
+        /// <summary>
         /// Pincode control.
         /// </summary>
         /// <remarks>
@@ -94,6 +157,24 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Pincode;
+
+        /// <summary>
+        /// rfvPincode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPincode;
+
+        /// <summary>
+        /// revPincode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revPincode;
 
         /// <summary>
         /// ContactPersonName control.
@@ -105,6 +186,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox ContactPersonName;
 
         /// <summary>
+        /// rfvContactPersonName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContactPersonName;
+
+        /// <summary>
         /// ContactNumber control.
         /// </summary>
         /// <remarks>
@@ -112,6 +202,24 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ContactNumber;
+
+        /// <summary>
+        /// rfvContactNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContactNumber;
+
+        /// <summary>
+        /// revContactNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revContactNumber;
 
         /// <summary>
         /// Email control.
@@ -123,6 +231,24 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox Email;
 
         /// <summary>
+        /// rfvEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+
+        /// <summary>
+        /// revEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
+
+        /// <summary>
         /// PlantInterest control.
         /// </summary>
         /// <remarks>
@@ -130,6 +256,15 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList PlantInterest;
+
+        /// <summary>
+        /// rfvPlantInterest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPlantInterest;
 
         /// <summary>
         /// SupplierType control.
@@ -141,6 +276,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.DropDownList SupplierType;
 
         /// <summary>
+        /// rfvSupplierType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSupplierType;
+
+        /// <summary>
         /// GSTNumber control.
         /// </summary>
         /// <remarks>
@@ -148,6 +292,15 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox GSTNumber;
+
+        /// <summary>
+        /// rfvGSTNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvGSTNumber;
 
         /// <summary>
         /// PanNumber control.
@@ -159,6 +312,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox PanNumber;
 
         /// <summary>
+        /// rfvPanNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPanNumber;
+
+        /// <summary>
         /// AdharNumber control.
         /// </summary>
         /// <remarks>
@@ -166,6 +328,15 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox AdharNumber;
+
+        /// <summary>
+        /// rfvAdharNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAdharNumber;
 
         /// <summary>
         /// MSMEApprovalYes control.
@@ -195,6 +366,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.FileUpload GSTCertificate;
 
         /// <summary>
+        /// rfvGSTCertificate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvGSTCertificate;
+
+        /// <summary>
         /// PanCard control.
         /// </summary>
         /// <remarks>
@@ -204,6 +384,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.FileUpload PanCard;
 
         /// <summary>
+        /// rfvPanCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPanCard;
+
+        /// <summary>
         /// AdharCard control.
         /// </summary>
         /// <remarks>
@@ -211,6 +400,15 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload AdharCard;
+
+        /// <summary>
+        /// rfvAdharCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAdharCard;
 
         /// <summary>
         /// MSMENumber control.
@@ -240,6 +438,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.DropDownList PaymentTerms;
 
         /// <summary>
+        /// rfvPaymentTerms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPaymentTerms;
+
+        /// <summary>
         /// BankName control.
         /// </summary>
         /// <remarks>
@@ -247,6 +454,15 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox BankName;
+
+        /// <summary>
+        /// rfvBankName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBankName;
 
         /// <summary>
         /// IFSCCode control.
@@ -258,6 +474,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox IFSCCode;
 
         /// <summary>
+        /// rfvIFSCCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIFSCCode;
+
+        /// <summary>
         /// AccountNumber control.
         /// </summary>
         /// <remarks>
@@ -265,6 +490,15 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox AccountNumber;
+
+        /// <summary>
+        /// rfvAccountNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAccountNumber;
 
         /// <summary>
         /// Branch control.
@@ -276,6 +510,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox Branch;
 
         /// <summary>
+        /// rfvBranch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBranch;
+
+        /// <summary>
         /// AccountHolderName control.
         /// </summary>
         /// <remarks>
@@ -285,6 +528,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.TextBox AccountHolderName;
 
         /// <summary>
+        /// rfvAccountHolderName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAccountHolderName;
+
+        /// <summary>
         /// CancelledCheque control.
         /// </summary>
         /// <remarks>
@@ -292,5 +544,23 @@ namespace Vendor_Management
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload CancelledCheque;
+
+        /// <summary>
+        /// rfvCancelledCheque control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCancelledCheque;
+
+        /// <summary>
+        /// SubmitButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SubmitButton;
     }
 }
