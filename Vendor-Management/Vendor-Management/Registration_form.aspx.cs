@@ -12,7 +12,7 @@ namespace Vendor_Management
         protected void Page_Load(object sender, EventArgs e)
         {
         }
-
+      
         protected void NextButton1_Click(object sender, EventArgs e)
         {
         }
