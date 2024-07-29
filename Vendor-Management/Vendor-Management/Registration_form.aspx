@@ -24,11 +24,32 @@
                 $('.nav-link').removeClass('active');
                 $('a[data-target="' + target + '"]').addClass('active');
             });
+            $('input[name="MSMEApproval"]').change(function () {
+                if ($('#MSMEApprovalYes').is(':checked')) {
+                    $('#MSMEApprovalDetails').show();
+                } else {
+                    $('#MSMEApprovalDetails').hide();
+                }
+            });
+
 
             $('.form-section').hide();
             $('#personalSection').show();
             $('.nav-link[data-target="#personalSection"]').addClass('active');
         });
+        function validateFileUpload(fileInput) {
+            const allowedExtensions = /(\.pdf|\.jpeg|\.jpg)$/i;
+            const maxSize = 2 * 1024 * 1024; // 2 MB
+            const filePath = fileInput.value;
+            const fileSize = fileInput.files[0].size;
+
+            if (!allowedExtensions.exec(filePath) || fileSize > maxSize) {
+                alert('Invalid file. Please upload a PDF/JPEG/JPG file less than 2 MB.');
+                fileInput.value = '';
+                return false;
+            }
+            return true;
+        }
     </script>
 </head>
 <body>
@@ -179,9 +200,50 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="MSMECertificate" class="col-sm-4 col-form-label">MSME Certificate</label>
+                            <label for="AdharNumber" class="col-sm-4 col-form-label">Adhar Number</label>
                             <div class="col-sm-8">
-                                <asp:FileUpload ID="MSMECertificate" runat="server" CssClass="form-control-file" />
+                                <asp:TextBox ID="AdharNumber" runat="server" CssClass="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label">MSME Approval</label>
+                            <div class="col-sm-8 d-flex align-items-center">
+                                <asp:RadioButton ID="MSMEApprovalYes" runat="server" GroupName="MSMEApproval" Text="Yes" CssClass="form-check-input" />
+                                <asp:RadioButton ID="MSMEApprovalNo" runat="server" GroupName="MSMEApproval" Text="No" CssClass="form-check-input ml-3"  />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label for="GSTCertificate" class="col-sm-4 col-form-label">GST Certificate</label>
+                            <div class="col-sm-8">
+                                <asp:FileUpload ID="GSTCertificate" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="PanCard" class="col-sm-4 col-form-label">PAN Card</label>
+                            <div class="col-sm-8">
+                                <asp:FileUpload ID="PanCard" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="AdharCard" class="col-sm-4 col-form-label">Adhar Card</label>
+                            <div class="col-sm-8">
+                                <asp:FileUpload ID="AdharCard" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
+                            </div>
+                        </div>
+                        <div id="MSMEApprovalDetails"  style="display:none;">
+                            <div class="form-group row">
+                                <label for="MSMENumber" class="col-sm-4 col-form-label">MSME Number</label>
+                                <div class="col-sm-8">
+                                    <asp:TextBox ID="MSMENumber" runat="server" CssClass="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="MSMECertificate" class="col-sm-4 col-form-label">MSME Certificate</label>
+                                <div class="col-sm-8">
+                                    <asp:FileUpload ID="MSMECertificate" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)"/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -238,7 +300,7 @@
                         <div class="form-group row">
                             <label for="CancelledCheque" class="col-sm-4 col-form-label">Cancelled Cheque</label>
                             <div class="col-sm-8">
-                                <asp:FileUpload ID="CancelledCheque" runat="server" CssClass="form-control-file" />
+                                <asp:FileUpload ID="CancelledCheque" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
                             </div>
                         </div>
                     </div>

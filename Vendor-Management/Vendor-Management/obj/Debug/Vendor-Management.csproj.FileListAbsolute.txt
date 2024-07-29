@@ -1,3 +1,5 @@
+D:\Vendor-Management\Vendor-Management\Vendor-Management\obj\Debug\Vendor-Management.csproj.AssemblyReference.cache
+D:\Vendor-Management\Vendor-Management\Vendor-Management\obj\Debug\Vendor-Management.csproj.CoreCompileInputs.cache
 D:\Vendor-Management\Vendor-Management\Vendor-Management\bin\Vendor-Management.dll.config
 D:\Vendor-Management\Vendor-Management\Vendor-Management\bin\Vendor-Management.dll
 D:\Vendor-Management\Vendor-Management\Vendor-Management\bin\Vendor-Management.pdb
@@ -52,8 +54,6 @@ D:\Vendor-Management\Vendor-Management\Vendor-Management\bin\roslyn\VBCSCompiler
 D:\Vendor-Management\Vendor-Management\Vendor-Management\bin\roslyn\VBCSCompiler.exe.config
 D:\Vendor-Management\Vendor-Management\Vendor-Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Vendor-Management\Vendor-Management\Vendor-Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Vendor-Management\Vendor-Management\Vendor-Management\obj\Debug\Vendor-Management.csproj.AssemblyReference.cache
-D:\Vendor-Management\Vendor-Management\Vendor-Management\obj\Debug\Vendor-Management.csproj.CoreCompileInputs.cache
 D:\Vendor-Management\Vendor-Management\Vendor-Management\obj\Debug\Vendor-M.50895432.Up2Date
 D:\Vendor-Management\Vendor-Management\Vendor-Management\obj\Debug\Vendor-Management.dll
 D:\Vendor-Management\Vendor-Management\Vendor-Management\obj\Debug\Vendor-Management.pdb
