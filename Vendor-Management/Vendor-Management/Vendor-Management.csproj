@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,10 +75,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataEntityModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataEntityModel.Context.cs</LastGenOutput>
+      <DependentUpon>DataEntityModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DataEntityModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataEntityModel.edmx</DependentUpon>
+      <LastGenOutput>DataEntityModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="emailSubmitted.aspx" />
     <Content Include="Registration_form.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accepted.cs">
+      <DependentUpon>DataEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntityModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataEntityModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntityModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataEntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataEntityModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="data_entry.cs">
+      <DependentUpon>DataEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deleted.cs">
+      <DependentUpon>DataEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="emailSubmitted.aspx.cs">
+      <DependentUpon>emailSubmitted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="emailSubmitted.aspx.designer.cs">
+      <DependentUpon>emailSubmitted.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration_form.aspx.cs">
       <DependentUpon>Registration_form.aspx</DependentUpon>
@@ -81,6 +131,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="DataEntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataEntityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataEntityModel.edmx.diagram">
+      <DependentUpon>DataEntityModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -88,6 +145,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

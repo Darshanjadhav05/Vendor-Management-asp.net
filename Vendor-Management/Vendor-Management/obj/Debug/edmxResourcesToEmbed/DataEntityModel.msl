@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SarangModelStoreContainer" CdmEntityContainer="data_entry_entity">
+    <EntitySetMapping Name="accepteds">
+      <EntityTypeMapping TypeName="SarangModel.accepted">
+        <MappingFragment StoreEntitySet="accepted">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="V_C_Type" ColumnName="V_C_Type" />
+          <ScalarProperty Name="V_C_Name" ColumnName="V_C_Name" />
+          <ScalarProperty Name="Firm_Name" ColumnName="Firm_Name" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Tahasil" ColumnName="Tahasil" />
+          <ScalarProperty Name="Dist" ColumnName="Dist" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="Dom_Foreign" ColumnName="Dom_Foreign" />
+          <ScalarProperty Name="Con_Per_Name" ColumnName="Con_Per_Name" />
+          <ScalarProperty Name="Con_Number" ColumnName="Con_Number" />
+          <ScalarProperty Name="Con_Email" ColumnName="Con_Email" />
+          <ScalarProperty Name="Conn_Int_Plnt" ColumnName="Conn_Int_Plnt" />
+          <ScalarProperty Name="Supp_Type" ColumnName="Supp_Type" />
+          <ScalarProperty Name="GSTIN_No" ColumnName="GSTIN_No" />
+          <ScalarProperty Name="GSTIN_Cert" ColumnName="GSTIN_Cert" />
+          <ScalarProperty Name="PAN_NO" ColumnName="PAN_NO" />
+          <ScalarProperty Name="Pan_Card" ColumnName="Pan_Card" />
+          <ScalarProperty Name="Aadhar_No" ColumnName="Aadhar_No" />
+          <ScalarProperty Name="Aadhar_Card" ColumnName="Aadhar_Card" />
+          <ScalarProperty Name="MSME_Appr" ColumnName="MSME_Appr" />
+          <ScalarProperty Name="MSME_Cert" ColumnName="MSME_Cert" />
+          <ScalarProperty Name="Pay_Term" ColumnName="Pay_Term" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Bank_Branch" ColumnName="Bank_Branch" />
+          <ScalarProperty Name="Bank_IFSC_Code" ColumnName="Bank_IFSC_Code" />
+          <ScalarProperty Name="Bank_Hol_Name" ColumnName="Bank_Hol_Name" />
+          <ScalarProperty Name="Bank_Acc_No" ColumnName="Bank_Acc_No" />
+          <ScalarProperty Name="Bank_Chck_Copy" ColumnName="Bank_Chck_Copy" />
+          <ScalarProperty Name="V_C_Date" ColumnName="V_C_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="data_entry">
+      <EntityTypeMapping TypeName="SarangModel.data_entry">
+        <MappingFragment StoreEntitySet="data_entry">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="V_C_Type" ColumnName="V_C_Type" />
+          <ScalarProperty Name="V_C_Name" ColumnName="V_C_Name" />
+          <ScalarProperty Name="Firm_Name" ColumnName="Firm_Name" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Tahasil" ColumnName="Tahasil" />
+          <ScalarProperty Name="Dist" ColumnName="Dist" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="Dom_Foreign" ColumnName="Dom_Foreign" />
+          <ScalarProperty Name="Con_Per_Name" ColumnName="Con_Per_Name" />
+          <ScalarProperty Name="Con_Number" ColumnName="Con_Number" />
+          <ScalarProperty Name="Con_Email" ColumnName="Con_Email" />
+          <ScalarProperty Name="Conn_Int_Plnt" ColumnName="Conn_Int_Plnt" />
+          <ScalarProperty Name="Supp_Type" ColumnName="Supp_Type" />
+          <ScalarProperty Name="GSTIN_No" ColumnName="GSTIN_No" />
+          <ScalarProperty Name="GSTIN_Cert" ColumnName="GSTIN_Cert" />
+          <ScalarProperty Name="PAN_NO" ColumnName="PAN_NO" />
+          <ScalarProperty Name="Pan_Card" ColumnName="Pan_Card" />
+          <ScalarProperty Name="Aadhar_No" ColumnName="Aadhar_No" />
+          <ScalarProperty Name="Aadhar_Card" ColumnName="Aadhar_Card" />
+          <ScalarProperty Name="MSME_Appr" ColumnName="MSME_Appr" />
+          <ScalarProperty Name="MSME_Cert" ColumnName="MSME_Cert" />
+          <ScalarProperty Name="Pay_Term" ColumnName="Pay_Term" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Bank_Branch" ColumnName="Bank_Branch" />
+          <ScalarProperty Name="Bank_IFSC_Code" ColumnName="Bank_IFSC_Code" />
+          <ScalarProperty Name="Bank_Hol_Name" ColumnName="Bank_Hol_Name" />
+          <ScalarProperty Name="Bank_Acc_No" ColumnName="Bank_Acc_No" />
+          <ScalarProperty Name="Bank_Chck_Copy" ColumnName="Bank_Chck_Copy" />
+          <ScalarProperty Name="V_C_Date" ColumnName="V_C_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="deleteds">
+      <EntityTypeMapping TypeName="SarangModel.deleted">
+        <MappingFragment StoreEntitySet="deleted">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="V_C_Type" ColumnName="V_C_Type" />
+          <ScalarProperty Name="V_C_Name" ColumnName="V_C_Name" />
+          <ScalarProperty Name="Firm_Name" ColumnName="Firm_Name" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Tahasil" ColumnName="Tahasil" />
+          <ScalarProperty Name="Dist" ColumnName="Dist" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="Dom_Foreign" ColumnName="Dom_Foreign" />
+          <ScalarProperty Name="Con_Per_Name" ColumnName="Con_Per_Name" />
+          <ScalarProperty Name="Con_Number" ColumnName="Con_Number" />
+          <ScalarProperty Name="Con_Email" ColumnName="Con_Email" />
+          <ScalarProperty Name="Conn_Int_Plnt" ColumnName="Conn_Int_Plnt" />
+          <ScalarProperty Name="Supp_Type" ColumnName="Supp_Type" />
+          <ScalarProperty Name="GSTIN_No" ColumnName="GSTIN_No" />
+          <ScalarProperty Name="GSTIN_Cert" ColumnName="GSTIN_Cert" />
+          <ScalarProperty Name="PAN_NO" ColumnName="PAN_NO" />
+          <ScalarProperty Name="Pan_Card" ColumnName="Pan_Card" />
+          <ScalarProperty Name="Aadhar_No" ColumnName="Aadhar_No" />
+          <ScalarProperty Name="Aadhar_Card" ColumnName="Aadhar_Card" />
+          <ScalarProperty Name="MSME_Appr" ColumnName="MSME_Appr" />
+          <ScalarProperty Name="MSME_Cert" ColumnName="MSME_Cert" />
+          <ScalarProperty Name="Pay_Term" ColumnName="Pay_Term" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="Bank_Branch" ColumnName="Bank_Branch" />
+          <ScalarProperty Name="Bank_IFSC_Code" ColumnName="Bank_IFSC_Code" />
+          <ScalarProperty Name="Bank_Hol_Name" ColumnName="Bank_Hol_Name" />
+          <ScalarProperty Name="Bank_Acc_No" ColumnName="Bank_Acc_No" />
+          <ScalarProperty Name="Bank_Chck_Copy" ColumnName="Bank_Chck_Copy" />
+          <ScalarProperty Name="V_C_Date" ColumnName="V_C_Date" />
+          <ScalarProperty Name="Rejected_Timestamp" ColumnName="Rejected_Timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

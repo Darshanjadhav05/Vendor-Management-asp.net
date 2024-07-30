@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SarangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="accepted">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="V_C_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="V_C_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Firm_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Area" Type="nvarchar" MaxLength="50" />
+    <Property Name="Street" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tahasil" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dist" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="PinCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Dom_Foreign" Type="nvarchar" MaxLength="50" />
+    <Property Name="Con_Per_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Con_Number" Type="nvarchar" MaxLength="20" />
+    <Property Name="Con_Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Conn_Int_Plnt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supp_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="GSTIN_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="GSTIN_Cert" Type="varbinary(max)" />
+    <Property Name="PAN_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pan_Card" Type="varbinary(max)" />
+    <Property Name="Aadhar_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Aadhar_Card" Type="varbinary(max)" />
+    <Property Name="MSME_Appr" Type="nvarchar" MaxLength="50" />
+    <Property Name="MSME_Cert" Type="varbinary(max)" />
+    <Property Name="Pay_Term" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bank_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bank_Branch" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bank_IFSC_Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="Bank_Hol_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Bank_Acc_No" Type="nvarchar" MaxLength="20" />
+    <Property Name="Bank_Chck_Copy" Type="varbinary(max)" />
+    <Property Name="V_C_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="data_entry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="V_C_Type" Type="nvarchar" MaxLength="255" />
+    <Property Name="V_C_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Firm_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Area" Type="nvarchar" MaxLength="255" />
+    <Property Name="Street" Type="nvarchar" MaxLength="255" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tahasil" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dist" Type="nvarchar" MaxLength="255" />
+    <Property Name="State" Type="nvarchar" MaxLength="255" />
+    <Property Name="Country" Type="nvarchar" MaxLength="255" />
+    <Property Name="PinCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dom_Foreign" Type="nvarchar" MaxLength="255" />
+    <Property Name="Con_Per_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Con_Number" Type="nvarchar" MaxLength="255" />
+    <Property Name="Con_Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Conn_Int_Plnt" Type="nvarchar" MaxLength="255" />
+    <Property Name="Supp_Type" Type="nvarchar" MaxLength="255" />
+    <Property Name="GSTIN_No" Type="nvarchar" MaxLength="255" />
+    <Property Name="GSTIN_Cert" Type="varbinary(max)" />
+    <Property Name="PAN_NO" Type="nvarchar" MaxLength="255" />
+    <Property Name="Pan_Card" Type="varbinary(max)" />
+    <Property Name="Aadhar_No" Type="nvarchar" MaxLength="255" />
+    <Property Name="Aadhar_Card" Type="varbinary(max)" />
+    <Property Name="MSME_Appr" Type="nvarchar" MaxLength="255" />
+    <Property Name="MSME_Cert" Type="varbinary(max)" />
+    <Property Name="Pay_Term" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bank_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bank_Branch" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bank_IFSC_Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bank_Hol_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bank_Acc_No" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bank_Chck_Copy" Type="varbinary(max)" />
+    <Property Name="V_C_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="deleted">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="V_C_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="V_C_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Firm_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Area" Type="nvarchar" MaxLength="50" />
+    <Property Name="Street" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tahasil" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dist" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="PinCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Dom_Foreign" Type="nvarchar" MaxLength="50" />
+    <Property Name="Con_Per_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Con_Number" Type="nvarchar" MaxLength="20" />
+    <Property Name="Con_Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Conn_Int_Plnt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supp_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="GSTIN_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="GSTIN_Cert" Type="varbinary(max)" />
+    <Property Name="PAN_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pan_Card" Type="varbinary(max)" />
+    <Property Name="Aadhar_No" Type="nvarchar" MaxLength="50" />
+    <Property Name="Aadhar_Card" Type="varbinary(max)" />
+    <Property Name="MSME_Appr" Type="nvarchar" MaxLength="50" />
+    <Property Name="MSME_Cert" Type="varbinary(max)" />
+    <Property Name="Pay_Term" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bank_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bank_Branch" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bank_IFSC_Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="Bank_Hol_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Bank_Acc_No" Type="nvarchar" MaxLength="20" />
+    <Property Name="Bank_Chck_Copy" Type="varbinary(max)" />
+    <Property Name="V_C_Date" Type="date" />
+    <Property Name="Rejected_Timestamp" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="SarangModelStoreContainer">
+    <EntitySet Name="accepted" EntityType="Self.accepted" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="data_entry" EntityType="Self.data_entry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="deleted" EntityType="Self.deleted" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
