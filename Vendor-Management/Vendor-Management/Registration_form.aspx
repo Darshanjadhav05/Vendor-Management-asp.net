@@ -51,11 +51,38 @@
             }
             return true;
         }
+        
+        $(document).ready(function () {
+            $('input[name="CustomerType"]').change(function () {
+                if ($('#International').is(':checked')) {
+                    $('#Country').val('');
+                    $('#gstDetails').hide();
+                    $('#internationDetails').show();
+                } else {
+                    $('#Country').val('India');
+                    $('#internationDetails').hide();
+                    $('#gstDetails').show();
+
+
+                  
+                }
+            });
+        });
     </script>
+    <style>
+    .form-group {
+        margin-bottom: 0.5rem; 
+    .form-group .row {
+        margin-bottom: 0.5rem; 
+    }
+    .form-group .col-form-label {
+        margin-bottom: 0.5rem; 
+    }
+</style>
 </head>
 <body>
    <form id="form1" runat="server">
-    <div class="container mt-5">
+    <div class="container mt-3">
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link active" data-target="#personalSection" href="#">Personal Details</a>
@@ -64,8 +91,9 @@
                 <a class="nav-link" data-target="#plantInfoSection" href="#">Plant Info</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-target="#gstSection" href="#">GST Details</a>
-            </li>
+                <a class="nav-link" data-target="#DetailsSection" href="#">GST Details</a>
+            </li >
+            
             <li class="nav-item">
                 <a class="nav-link" data-target="#bankSection" href="#">Bank Details</a>
             </li>
@@ -115,6 +143,17 @@
                                 ErrorMessage="District is required" CssClass="text-danger" />
                         </div>
                     </div>
+                     <div class="form-group row">
+     <label for="Email" class="col-sm-4 col-form-label">Email</label>
+     <div class="col-sm-8">
+         <asp:TextBox ID="Email" runat="server" CssClass="form-control" />
+         <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="Email" 
+             ErrorMessage="Email is required" CssClass="text-danger" />
+         <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="Email" 
+             ErrorMessage="Invalid Email format" CssClass="text-danger" 
+             ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" />
+     </div>
+ </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
@@ -125,14 +164,29 @@
                                 ErrorMessage="State is required" CssClass="text-danger" />
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="Country" class="col-sm-4 col-form-label">Country</label>
-                        <div class="col-sm-8">
-                            <asp:TextBox ID="Country" runat="server" CssClass="form-control" />
-                            <asp:RequiredFieldValidator ID="rfvCountry" runat="server" ControlToValidate="Country" 
-                                ErrorMessage="Country is required" CssClass="text-danger" />
-                        </div>
+  <div class="form-group row">
+    <label for="CustomerType" class="col-sm-4 col-form-label">Customer Type</label>
+    <div class="col-sm-8 d-flex align-items-center">
+        <div class="form-check form-check-inline">
+            <asp:RadioButton ID="Domestic" runat="server" GroupName="CustomerType" CssClass="form-check-input" />
+            <label class="form-check-label" for="Domestic">Domestic</label>
+        </div>
+        <div class="form-check form-check-inline ml-4">
+            <asp:RadioButton ID="International" runat="server" GroupName="CustomerType" CssClass="form-check-input" />
+            <label class="form-check-label" for="International">International</label>
+        </div>
+    </div>
+</div>
+
+
+                <div class="form-group row">
+                    <label for="Country" class="col-sm-4 col-form-label">Country</label>
+                    <div class="col-sm-8">
+                        <asp:TextBox ID="Country" runat="server" CssClass="form-control" />
+                        <asp:RequiredFieldValidator ID="rfvCountry" runat="server" ControlToValidate="Country" 
+                            ErrorMessage="Country is required" CssClass="text-danger" />
                     </div>
+                </div>
                     <div class="form-group row">
                         <label for="Pincode" class="col-sm-4 col-form-label">Pincode</label>
                         <div class="col-sm-8">
@@ -163,17 +217,7 @@
                                 ValidationExpression="^\d{10}$" />
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="Email" class="col-sm-4 col-form-label">Email</label>
-                        <div class="col-sm-8">
-                            <asp:TextBox ID="Email" runat="server" CssClass="form-control" />
-                            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="Email" 
-                                ErrorMessage="Email is required" CssClass="text-danger" />
-                            <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="Email" 
-                                ErrorMessage="Invalid Email format" CssClass="text-danger" 
-                                ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" />
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
             <button type="button" class="btn btn-primary next-button" data-target="#plantInfoSection">Next</button>
@@ -216,88 +260,95 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary next-button" data-target="#gstSection">Next</button>
+            <button type="button" class="btn btn-primary next-button" data-target="#DetailsSection">Next</button>
         </div>
+        
+        <div id="DetailsSection" class="form-section mt-3">
+            <div id="gstDetails" >
+                <h2>GST Details</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="GSTNumber" class="col-sm-4 col-form-label">GST Number</label>
+            <div class="col-sm-8">
+                <asp:TextBox ID="GSTNumber" runat="server" CssClass="form-control" />
+                <asp:RequiredFieldValidator ID="rfvGSTNumber" runat="server" ControlToValidate="GSTNumber" 
+                    ErrorMessage="GST Number is required" CssClass="text-danger" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="PanNumber" class="col-sm-4 col-form-label">PAN Number</label>
+            <div class="col-sm-8">
+                <asp:TextBox ID="PanNumber" runat="server" CssClass="form-control" />
+                <asp:RequiredFieldValidator ID="rfvPanNumber" runat="server" ControlToValidate="PanNumber" 
+                    ErrorMessage="PAN Number is required" CssClass="text-danger" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="AdharNumber" class="col-sm-4 col-form-label">Adhar Number</label>
+            <div class="col-sm-8">
+                <asp:TextBox ID="AdharNumber" runat="server" CssClass="form-control" />
+                <asp:RequiredFieldValidator ID="rfvAdharNumber" runat="server" ControlToValidate="AdharNumber" 
+                    ErrorMessage="Adhar Number is required" CssClass="text-danger" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">MSME Approval</label>
+            <div class="col-sm-8 d-flex align-items-center">
+                <asp:RadioButton ID="MSMEApprovalYes" runat="server" GroupName="MSMEApproval" Text="Yes" CssClass="form-check-input" />
+                <asp:RadioButton ID="MSMEApprovalNo" runat="server" GroupName="MSMEApproval" Text="No" CssClass="form-check-input ml-3" />
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="GSTCertificate" class="col-sm-4 col-form-label">GST Certificate</label>
+            <div class="col-sm-8">
+                <asp:FileUpload ID="GSTCertificate" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
+                <asp:RequiredFieldValidator ID="rfvGSTCertificate" runat="server" ControlToValidate="GSTCertificate" 
+                    InitialValue="" ErrorMessage="GST Certificate is required" CssClass="text-danger" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="PanCard" class="col-sm-4 col-form-label">PAN Card</label>
+            <div class="col-sm-8">
+                <asp:FileUpload ID="PanCard" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
+                <asp:RequiredFieldValidator ID="rfvPanCard" runat="server" ControlToValidate="PanCard" 
+                    InitialValue="" ErrorMessage="PAN Card is required" CssClass="text-danger" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="AdharCard" class="col-sm-4 col-form-label">Adhar Card</label>
+            <div class="col-sm-8">
+                <asp:FileUpload ID="AdharCard" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
+                <asp:RequiredFieldValidator ID="rfvAdharCard" runat="server" ControlToValidate="AdharCard" 
+                    InitialValue="" ErrorMessage="Adhar Card is required" CssClass="text-danger" />
+            </div>
+        </div>
+        <div id="MSMEApprovalDetails" style="display:none;">
+            <div class="form-group row">
+                <label for="MSMENumber" class="col-sm-4 col-form-label">MSME Number</label>
+                <div class="col-sm-8">
+                    <asp:TextBox ID="MSMENumber" runat="server" CssClass="form-control" />
+                  
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="MSMECertificate" class="col-sm-4 col-form-label">MSME Certificate</label>
+                <div class="col-sm-8">
+                    <asp:FileUpload ID="MSMECertificate" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
 
-        <div id="gstSection" class="form-section mt-3">
-            <h2>GST Details</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group row">
-                        <label for="GSTNumber" class="col-sm-4 col-form-label">GST Number</label>
-                        <div class="col-sm-8">
-                            <asp:TextBox ID="GSTNumber" runat="server" CssClass="form-control" />
-                            <asp:RequiredFieldValidator ID="rfvGSTNumber" runat="server" ControlToValidate="GSTNumber" 
-                                ErrorMessage="GST Number is required" CssClass="text-danger" />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="PanNumber" class="col-sm-4 col-form-label">PAN Number</label>
-                        <div class="col-sm-8">
-                            <asp:TextBox ID="PanNumber" runat="server" CssClass="form-control" />
-                            <asp:RequiredFieldValidator ID="rfvPanNumber" runat="server" ControlToValidate="PanNumber" 
-                                ErrorMessage="PAN Number is required" CssClass="text-danger" />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="AdharNumber" class="col-sm-4 col-form-label">Adhar Number</label>
-                        <div class="col-sm-8">
-                            <asp:TextBox ID="AdharNumber" runat="server" CssClass="form-control" />
-                            <asp:RequiredFieldValidator ID="rfvAdharNumber" runat="server" ControlToValidate="AdharNumber" 
-                                ErrorMessage="Adhar Number is required" CssClass="text-danger" />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">MSME Approval</label>
-                        <div class="col-sm-8 d-flex align-items-center">
-                            <asp:RadioButton ID="MSMEApprovalYes" runat="server" GroupName="MSMEApproval" Text="Yes" CssClass="form-check-input" />
-                            <asp:RadioButton ID="MSMEApprovalNo" runat="server" GroupName="MSMEApproval" Text="No" CssClass="form-check-input ml-3" />
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group row">
-                        <label for="GSTCertificate" class="col-sm-4 col-form-label">GST Certificate</label>
-                        <div class="col-sm-8">
-                            <asp:FileUpload ID="GSTCertificate" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
-                            <asp:RequiredFieldValidator ID="rfvGSTCertificate" runat="server" ControlToValidate="GSTCertificate" 
-                                InitialValue="" ErrorMessage="GST Certificate is required" CssClass="text-danger" />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="PanCard" class="col-sm-4 col-form-label">PAN Card</label>
-                        <div class="col-sm-8">
-                            <asp:FileUpload ID="PanCard" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
-                            <asp:RequiredFieldValidator ID="rfvPanCard" runat="server" ControlToValidate="PanCard" 
-                                InitialValue="" ErrorMessage="PAN Card is required" CssClass="text-danger" />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="AdharCard" class="col-sm-4 col-form-label">Adhar Card</label>
-                        <div class="col-sm-8">
-                            <asp:FileUpload ID="AdharCard" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
-                            <asp:RequiredFieldValidator ID="rfvAdharCard" runat="server" ControlToValidate="AdharCard" 
-                                InitialValue="" ErrorMessage="Adhar Card is required" CssClass="text-danger" />
-                        </div>
-                    </div>
-                    <div id="MSMEApprovalDetails" style="display:none;">
-                        <div class="form-group row">
-                            <label for="MSMENumber" class="col-sm-4 col-form-label">MSME Number</label>
-                            <div class="col-sm-8">
-                                <asp:TextBox ID="MSMENumber" runat="server" CssClass="form-control" />
-                              
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="MSMECertificate" class="col-sm-4 col-form-label">MSME Certificate</label>
-                            <div class="col-sm-8">
-                                <asp:FileUpload ID="MSMECertificate" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+            <div id="internationDetails" style="display:none">
+                  <h1>International Details</h1>
             </div>
             <button type="button" class="btn btn-primary next-button" data-target="#bankSection">Next</button>
         </div>

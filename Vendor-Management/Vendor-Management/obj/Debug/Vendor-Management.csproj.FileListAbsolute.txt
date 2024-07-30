@@ -120,3 +120,7 @@ C:\Users\HP\OneDrive\Desktop\Sarang\Vendor-Management\Vendor-Management\Vendor-M
 C:\Users\HP\OneDrive\Desktop\Sarang\Vendor-Management\Vendor-Management\Vendor-Management\bin\EntityFramework.SqlServer.dll
 C:\Users\HP\OneDrive\Desktop\Sarang\Vendor-Management\Vendor-Management\Vendor-Management\bin\EntityFramework.xml
 C:\Users\HP\OneDrive\Desktop\Sarang\Vendor-Management\Vendor-Management\Vendor-Management\bin\EntityFramework.SqlServer.xml
+D:\Vendor-Management\Vendor-Management\Vendor-Management\bin\EntityFramework.dll
+D:\Vendor-Management\Vendor-Management\Vendor-Management\bin\EntityFramework.SqlServer.dll
+D:\Vendor-Management\Vendor-Management\Vendor-Management\bin\EntityFramework.xml
+D:\Vendor-Management\Vendor-Management\Vendor-Management\bin\EntityFramework.SqlServer.xml
