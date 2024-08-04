@@ -87,6 +87,18 @@
     </Content>
     <Content Include="emailSubmitted.aspx" />
     <Content Include="Registration_form.aspx" />
+    <Content Include="RMDashboard.aspx" />
+    <Content Include="RMlogin.aspx" />
+    <Content Include="RMmodel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RMmodel.edmx</DependentUpon>
+      <LastGenOutput>RMmodel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RMmodel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RMmodel.edmx</DependentUpon>
+      <LastGenOutput>RMmodel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -122,12 +134,44 @@
       <DependentUpon>emailSubmitted.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="regional_manager.cs">
+      <DependentUpon>RMmodel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Registration_form.aspx.cs">
       <DependentUpon>Registration_form.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Registration_form.aspx.designer.cs">
       <DependentUpon>Registration_form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RMDashboard.aspx.cs">
+      <DependentUpon>RMDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RMDashboard.aspx.designer.cs">
+      <DependentUpon>RMDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RMlogin.aspx.cs">
+      <DependentUpon>RMlogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RMlogin.aspx.designer.cs">
+      <DependentUpon>RMlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RMmodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RMmodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RMmodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RMmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RMmodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RMmodel.edmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +183,13 @@
       <DependentUpon>DataEntityModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <EntityDeploy Include="RMmodel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RMmodel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="RMmodel.edmx.diagram">
+      <DependentUpon>RMmodel.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
