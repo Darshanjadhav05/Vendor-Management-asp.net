@@ -85,7 +85,9 @@
       <DependentUpon>DataEntityModel.edmx</DependentUpon>
       <LastGenOutput>DataEntityModel.cs</LastGenOutput>
     </Content>
-    <Content Include="emailSubmitted.aspx" />
+    <Content Include="RMAccepted_Applications.aspx" />
+    <Content Include="RMRejected_Applications.aspx" />
+    <Content Include="test.aspx" />
     <Content Include="Registration_form.aspx" />
     <Content Include="RMDashboard.aspx" />
     <Content Include="RMlogin.aspx" />
@@ -126,12 +128,26 @@
     <Compile Include="deleted.cs">
       <DependentUpon>DataEntityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="emailSubmitted.aspx.cs">
-      <DependentUpon>emailSubmitted.aspx</DependentUpon>
+    <Compile Include="RMAccepted_Applications.aspx.cs">
+      <DependentUpon>RMAccepted_Applications.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="emailSubmitted.aspx.designer.cs">
-      <DependentUpon>emailSubmitted.aspx</DependentUpon>
+    <Compile Include="RMAccepted_Applications.aspx.designer.cs">
+      <DependentUpon>RMAccepted_Applications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RMRejected_Applications.aspx.cs">
+      <DependentUpon>RMRejected_Applications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RMRejected_Applications.aspx.designer.cs">
+      <DependentUpon>RMRejected_Applications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="regional_manager.cs">

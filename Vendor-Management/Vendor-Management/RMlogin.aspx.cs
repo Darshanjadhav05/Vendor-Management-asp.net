@@ -24,7 +24,6 @@ namespace Vendor_Management
                 if (username == user.username && password == user.password)
                 {
                     lblMessage.Text = "<div class='alert alert-success'>Login successful!</div>";
-                    // Redirect to the dashboard or another page
                     Session["region"] = user.region_name;
                     Response.Redirect("RMdashboard.aspx");
                 }
@@ -33,7 +32,6 @@ namespace Vendor_Management
                     lblMessage.Text = "<div class='alert alert-danger'>Invalid username or password.</div>";
                 }
             }
-            // Replace with your actual validation logic
 
         }
     }
