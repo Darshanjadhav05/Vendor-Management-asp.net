@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
         $(document).ready(function () {
+            // Navigation between sections
             $('.nav-link').click(function () {
                 var target = $(this).attr('data-target');
                 $('.form-section').hide();
@@ -18,12 +19,20 @@
 
             $('.next-button').click(function () {
                 var target = $(this).attr('data-target');
+                var isPlantDetailsNextButton = $(this).hasClass('plant-details-next');
+
+                // If the Plant Details Next button is clicked and International is selected
+                if (isPlantDetailsNextButton && $('#International').is(':checked')) {
+                    console.log('International selected, navigating to: #bankSection');
+                    target = '#bankSection';
+                }
                 $('.form-section').hide();
                 $(target).show();
-
                 $('.nav-link').removeClass('active');
                 $('a[data-target="' + target + '"]').addClass('active');
             });
+
+            // MSME Approval logic
             $('input[name="MSMEApproval"]').change(function () {
                 if ($('#MSMEApprovalYes').is(':checked')) {
                     $('#MSMEApprovalDetails').show();
@@ -32,11 +41,28 @@
                 }
             });
 
+            // Customer Type logic
+            $('input[name="CustomerType"]').change(function () {
+                if ($('#International').is(':checked')) {
+                    $('#Country').val('');
+                    $('#gstDetails').hide();
+                    $('a[data-target="#DetailsSection"]').hide();
+                   
+                } else {
+                    $('#Country').val('India');
+                    $('#gstDetails').show();
+                    $('a[data-target="#DetailsSection"]').show();
+                   
+                }
+            });
 
+          
+            // Default section display on load
             $('.form-section').hide();
             $('#personalSection').show();
             $('.nav-link[data-target="#personalSection"]').addClass('active');
         });
+
         function validateFileUpload(fileInput) {
             console.log("File upload validation triggered");
             const allowedExtensions = /(\.pdf|\.jpeg|\.jpg)$/i;
@@ -52,22 +78,6 @@
             return true;
         }
 
-        $(document).ready(function () {
-            $('input[name="CustomerType"]').change(function () {
-                if ($('#International').is(':checked')) {
-                    $('#Country').val('');
-                    $('#gstDetails').hide();
-                    $('#internationDetails').show();
-                } else {
-                    $('#Country').val('India');
-                    $('#internationDetails').hide();
-                    $('#gstDetails').show();
-
-
-
-                }
-            });
-        });
     </script>
     <style>
         .form-group {
@@ -214,10 +224,10 @@
                             <div class="col-sm-8">
                                 <asp:TextBox ID="ContactNumber" runat="server" CssClass="form-control" />
                                 <asp:RequiredFieldValidator ID="rfvContactNumber" runat="server" ControlToValidate="ContactNumber"
-                                    ErrorMessage="Contact Number is required" CssClass="text-danger" />
+                                    ErrorMessage="Contact Number is required" CssClass="text-danger"  Display="Dynamic"  />
                                 <asp:RegularExpressionValidator ID="revContactNumber" runat="server" ControlToValidate="ContactNumber"
                                     ErrorMessage="Invalid Contact Number format" CssClass="text-danger"
-                                    ValidationExpression="^\d{10}$" />
+                                    ValidationExpression="^\d{10}$"  Display="Dynamic"  />
                             </div>
                         </div>
 
@@ -234,6 +244,7 @@
                             <label for="PlantInterest" class="col-sm-4 col-form-label">Plant Interest</label>
                             <div class="col-sm-8">
                                 <asp:DropDownList ID="PlantInterest" runat="server" CssClass="form-control">
+                                     <asp:ListItem Value="">Please Select City</asp:ListItem>
                                     <asp:ListItem Value="Mumbai">Mumbai</asp:ListItem>
                                     <asp:ListItem Value="Pune">Pune</asp:ListItem>
                                     <asp:ListItem Value="Silvasa">Silvasa</asp:ListItem>
@@ -242,7 +253,7 @@
                                     <asp:ListItem Value="Nashik">Nashik</asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator ID="rfvPlantInterest" runat="server" ControlToValidate="PlantInterest"
-                                    InitialValue="" ErrorMessage="Plant Interest is required" CssClass="text-danger" />
+                                    InitialValue="" ErrorMessage="Plant Interest is required" CssClass="text-danger"  Display="Dynamic" />
                             </div>
                         </div>
                     </div>
@@ -251,6 +262,7 @@
                             <label for="SupplierType" class="col-sm-4 col-form-label">Supplier Type</label>
                             <div class="col-sm-8">
                                 <asp:DropDownList ID="SupplierType" runat="server" CssClass="form-control">
+                                     <asp:ListItem Value="">Please Select</asp:ListItem>
                                     <asp:ListItem Value="Raw Material">Raw Material</asp:ListItem>
                                     <asp:ListItem Value="Packing Material">Packing Material</asp:ListItem>
                                     <asp:ListItem Value="Consumable Material">Consumable Material</asp:ListItem>
@@ -258,12 +270,12 @@
                                     <asp:ListItem Value="Other">Other</asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator ID="rfvSupplierType" runat="server" ControlToValidate="SupplierType"
-                                    InitialValue="" ErrorMessage="Supplier Type is required" CssClass="text-danger" />
+                                    InitialValue="" ErrorMessage="Supplier Type is required" CssClass="text-danger"  Display="Dynamic"  />
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary next-button" data-target="#DetailsSection">Next</button>
+                <button type="button" class="btn btn-primary next-button  plant-details-next" data-target="#DetailsSection">Next</button>
             </div>
 
             <div id="DetailsSection" class="form-section mt-3">
@@ -284,7 +296,7 @@
                                 <div class="col-sm-8">
                                     <asp:TextBox ID="PanNumber" runat="server" CssClass="form-control" />
                                     <asp:RequiredFieldValidator ID="rfvPanNumber" runat="server" ControlToValidate="PanNumber"
-                                        ErrorMessage="PAN Number is required" CssClass="text-danger" />
+                                        ErrorMessage="PAN Number is required" CssClass="text-danger"   Display="Dynamic" />
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -292,7 +304,14 @@
                                 <div class="col-sm-8">
                                     <asp:TextBox ID="AdharNumber" runat="server" CssClass="form-control" />
                                     <asp:RequiredFieldValidator ID="rfvAdharNumber" runat="server" ControlToValidate="AdharNumber"
-                                        ErrorMessage="Adhar Number is required" CssClass="text-danger" />
+                                        ErrorMessage="Adhar Number is required" CssClass="text-danger"  Display="Dynamic"  />
+                                     <asp:RegularExpressionValidator 
+                                        ID="revAadhaarNumber" 
+                                        runat="server" 
+                                        ControlToValidate="AdharNumber" 
+                                        ErrorMessage="Aadhaar Number must be 12 digits." 
+                                        CssClass="text-danger" 
+                                        ValidationExpression="^\d{12}$"  Display="Dynamic"  />
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -310,7 +329,7 @@
                                 <div class="col-sm-8">
                                     <asp:FileUpload ID="GSTCertificate" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
                                     <asp:RequiredFieldValidator ID="rfvGSTCertificate" runat="server" ControlToValidate="GSTCertificate"
-                                        InitialValue="" ErrorMessage="GST Certificate is required" CssClass="text-danger" />
+                                        InitialValue="" ErrorMessage="GST Certificate is required" CssClass="text-danger" Display="Dynamic" />
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -318,7 +337,7 @@
                                 <div class="col-sm-8">
                                     <asp:FileUpload ID="PanCard" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
                                     <asp:RequiredFieldValidator ID="rfvPanCard" runat="server" ControlToValidate="PanCard"
-                                        InitialValue="" ErrorMessage="PAN Card is required" CssClass="text-danger" />
+                                        InitialValue="" ErrorMessage="PAN Card is required" CssClass="text-danger"  Display="Dynamic" />
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -326,7 +345,7 @@
                                 <div class="col-sm-8">
                                     <asp:FileUpload ID="AdharCard" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
                                     <asp:RequiredFieldValidator ID="rfvAdharCard" runat="server" ControlToValidate="AdharCard"
-                                        InitialValue="" ErrorMessage="Adhar Card is required" CssClass="text-danger" />
+                                        InitialValue="" ErrorMessage="Adhar Card is required" CssClass="text-danger"  Display="Dynamic" />
                                 </div>
                             </div>
                             <div id="MSMEApprovalDetails" style="display: none;">
@@ -334,6 +353,13 @@
                                     <label for="MSMENumber" class="col-sm-4 col-form-label">MSME Number</label>
                                     <div class="col-sm-8">
                                         <asp:TextBox ID="MSMENumber" runat="server" CssClass="form-control" />
+                                        <asp:RegularExpressionValidator 
+                                            ID="revMSMENumber" 
+                                            runat="server" 
+                                            ControlToValidate="MSMENumber" 
+                                            ErrorMessage="MSME Number must be 20 digits or less." 
+                                            CssClass="text-danger" 
+                                            ValidationExpression="^\d{1,20}$"  Display="Dynamic" />
 
                                     </div>
                                 </div>
@@ -350,11 +376,17 @@
                 </div>
 
 
+
+
+
                 <div id="internationDetails" style="display: none">
                     <h1>International Details</h1>
                 </div>
                 <button type="button" class="btn btn-primary next-button" data-target="#bankSection">Next</button>
             </div>
+
+
+
 
             <div id="bankSection" class="form-section mt-3">
                 <h2>Bank Details</h2>
@@ -364,12 +396,13 @@
                             <label for="PaymentTerms" class="col-sm-4 col-form-label">Payment Terms</label>
                             <div class="col-sm-8">
                                 <asp:DropDownList ID="PaymentTerms" runat="server" CssClass="form-control">
+                                     <asp:ListItem Value="">Please Select Days</asp:ListItem>
                                     <asp:ListItem Value="30 Days">30 Days</asp:ListItem>
                                     <asp:ListItem Value="60 Days">60 Days</asp:ListItem>
                                     <asp:ListItem Value="90 Days">90 Days</asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator ID="rfvPaymentTerms" runat="server" ControlToValidate="PaymentTerms"
-                                    InitialValue="" ErrorMessage="Payment Terms is required" CssClass="text-danger" />
+                                    InitialValue="" ErrorMessage="Payment Terms is required" CssClass="text-danger"  Display="Dynamic" />
                             </div>
                         </div>
                         <div class="form-group row">
@@ -377,7 +410,7 @@
                             <div class="col-sm-8">
                                 <asp:TextBox ID="BankName" runat="server" CssClass="form-control" />
                                 <asp:RequiredFieldValidator ID="rfvBankName" runat="server" ControlToValidate="BankName"
-                                    ErrorMessage="Bank Name is required" CssClass="text-danger" />
+                                    ErrorMessage="Bank Name is required" CssClass="text-danger"  Display="Dynamic" />
                             </div>
                         </div>
                         <div class="form-group row">
@@ -385,7 +418,7 @@
                             <div class="col-sm-8">
                                 <asp:TextBox ID="IFSCCode" runat="server" CssClass="form-control" />
                                 <asp:RequiredFieldValidator ID="rfvIFSCCode" runat="server" ControlToValidate="IFSCCode"
-                                    ErrorMessage="IFSC Code is required" CssClass="text-danger" />
+                                    ErrorMessage="IFSC Code is required" CssClass="text-danger" Display="Dynamic"  />
                             </div>
                         </div>
                         <div class="form-group row">
@@ -393,7 +426,7 @@
                             <div class="col-sm-8">
                                 <asp:TextBox ID="AccountNumber" runat="server" CssClass="form-control" />
                                 <asp:RequiredFieldValidator ID="rfvAccountNumber" runat="server" ControlToValidate="AccountNumber"
-                                    ErrorMessage="Account Number is required" CssClass="text-danger" />
+                                    ErrorMessage="Account Number is required" CssClass="text-danger" Display="Dynamic"  />
                             </div>
                         </div>
                     </div>
@@ -411,7 +444,7 @@
                             <div class="col-sm-8">
                                 <asp:TextBox ID="AccountHolderName" runat="server" CssClass="form-control" />
                                 <asp:RequiredFieldValidator ID="rfvAccountHolderName" runat="server" ControlToValidate="AccountHolderName"
-                                    ErrorMessage="Account Holder Name is required" CssClass="text-danger" />
+                                    ErrorMessage="Account Holder Name is required" CssClass="text-danger" Display="Dynamic"  />
                             </div>
                         </div>
                         <div class="form-group row">
@@ -419,7 +452,7 @@
                             <div class="col-sm-8">
                                 <asp:FileUpload ID="CancelledCheque" runat="server" CssClass="form-control-file" onchange="validateFileUpload(this)" />
                                 <asp:RequiredFieldValidator ID="rfvCancelledCheque" runat="server" ControlToValidate="CancelledCheque"
-                                    InitialValue="" ErrorMessage="Cancelled Cheque is required" CssClass="text-danger" />
+                                    InitialValue="" ErrorMessage="Cancelled Cheque is required" CssClass="text-danger"  Display="Dynamic" />
                             </div>
                         </div>
                     </div>
