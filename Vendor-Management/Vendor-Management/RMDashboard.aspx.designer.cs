@@ -51,6 +51,15 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.Label lbl;
 
         /// <summary>
+        /// filename control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label filename;
+
+        /// <summary>
         /// lblV_C_Type control.
         /// </summary>
         /// <remarks>
@@ -213,13 +222,13 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.Label lblGSTIN_No;
 
         /// <summary>
-        /// gstlink control.
+        /// GSTCertificate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink gstlink;
+        protected global::System.Web.UI.WebControls.HyperLink GSTCertificate;
 
         /// <summary>
         /// lblPAN_NO control.
@@ -231,13 +240,13 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.Label lblPAN_NO;
 
         /// <summary>
-        /// panlink control.
+        /// PanCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink panlink;
+        protected global::System.Web.UI.WebControls.HyperLink PanCard;
 
         /// <summary>
         /// lblAadhar_No control.
@@ -249,13 +258,13 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.Label lblAadhar_No;
 
         /// <summary>
-        /// adharlink control.
+        /// AdharCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink adharlink;
+        protected global::System.Web.UI.WebControls.HyperLink AdharCard;
 
         /// <summary>
         /// lblMSME_Appr control.
@@ -339,12 +348,12 @@ namespace Vendor_Management
         protected global::System.Web.UI.WebControls.Label lblV_C_Date;
 
         /// <summary>
-        /// blankcheck control.
+        /// CancelledCheque control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink blankcheck;
+        protected global::System.Web.UI.WebControls.HyperLink CancelledCheque;
     }
 }

@@ -48,16 +48,16 @@ namespace Vendor_Management
             }
             else if (e.CommandName == "ViewDetails")
             {
-                string email = e.CommandArgument.ToString();
-                DisplayVendorDetails(email);
+                string adhar = e.CommandArgument.ToString();
+                DisplayVendorDetails(adhar);
             }
 
         }
-        private void DisplayVendorDetails(string email)
+        private void DisplayVendorDetails(string adhar)
         {
             using (var context = new data_entry_entity())
             {
-                var entry = context.data_entry.FirstOrDefault(x => x.Con_Email == email);
+                var entry = context.data_entry.FirstOrDefault(x => x.Aadhar_No == adhar);
                 if (entry != null)
                 {
                     lblV_C_Type.Text = "Vendor Type: " + entry.V_C_Type;
@@ -103,41 +103,38 @@ namespace Vendor_Management
         {
             string folderPath = Server.MapPath($"~/UploadedFiles/{aadhar_No}/");
 
-            // List of HyperLink controls
-            HyperLink[] hyperlinkControls = {gstlink, adharlink, blankcheck, panlink, msmelink };
+            HyperLink[] hyperlinkControls = { GSTCertificate, AdharCard, CancelledCheque, PanCard, msmelink };
 
-           
-            // Check if the folder exists
             if (Directory.Exists(folderPath))
             {
-                // Get all files in the adharcard folder
                 string[] files = Directory.GetFiles(folderPath);
 
-                // Loop through each file and bind it to a HyperLink control
                 for (int i = 0; i < files.Length && i < hyperlinkControls.Length; i++)
                 {
                     string file = files[i];
                     string fileName = Path.GetFileName(file);
 
-                    // Construct a virtual path (URL) that can be used by the browser to access the file
                     string fileUrl = ResolveUrl($"~/UploadedFiles/{aadhar_No}/" + fileName);
+                    filename.Text = fileName;
+                    HyperLink s = (HyperLink)(from link in hyperlinkControls where link.ID == Path.GetFileNameWithoutExtension(file) select link).FirstOrDefault();
 
-                    // Bind URL to the HyperLink control
-                    hyperlinkControls[i].NavigateUrl = fileUrl;
-                    hyperlinkControls[i].Text = fileName;
-                    hyperlinkControls[i].Target = "_blank";
+                    if (s != null)
+                    {
+                        s.NavigateUrl = fileUrl;
+                        s.NavigateUrl = fileUrl;
+                        s.Text = fileName;
+                        s.Target = "_blank";
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
 
-                // If there are more HyperLink controls than files, clear remaining HyperLinks
-                for (int i = files.Length; i < hyperlinkControls.Length; i++)
-                {
-                    hyperlinkControls[i].NavigateUrl = "";
-                    hyperlinkControls[i].Text = "No file";
-                }
             }
             else
             {
-                // If the folder does not exist, clear HyperLink controls
+                
                 foreach (var hyperlink in hyperlinkControls)
                 {
                     hyperlink.NavigateUrl = "";
@@ -147,12 +144,12 @@ namespace Vendor_Management
 
         }
 
-        private void ProcessApplication(string email, bool isAccepted)
+        private void ProcessApplication(string adhar, bool isAccepted)
         {
             using (var context = new data_entry_entity())
             {
-                var entry = context.data_entry.FirstOrDefault(x => x.Con_Email == email);
-
+                var entry = context.data_entry.FirstOrDefault(x => x.Aadhar_No == adhar);
+                string Email = entry.Con_Email;
                 if (entry != null)
                 {
                     if (isAccepted)
@@ -239,9 +236,9 @@ namespace Vendor_Management
                         context.deleteds.Add(deletedEntry);
                         //lbl.Text = "added to deleteds";
                     }
+                    SendEmail(Email, isAccepted);
                     context.data_entry.Remove(entry);
                     context.SaveChanges();
-                    SendEmail(email, isAccepted);
                 }
             }
             BindGrid();
@@ -273,7 +270,7 @@ namespace Vendor_Management
             catch (Exception ex)
             {
                 //Response.Redirect("test.aspx");
-                //lbl.Text = "Error sending email: " + ex.Message + " - " + ex.InnerException?.Message;
+                Response.Write("Error sending email: " + ex.Message + " - " + ex.InnerException?.Message);
             }
         }
 

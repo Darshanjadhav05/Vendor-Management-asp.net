@@ -41,58 +41,58 @@
         #closePopupButton {
             margin-top: 10px;
         }
+
         #popupDiv {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+        }
 
-#popupContent {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+        #popupContent {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.label-container {
-    margin-bottom: 10px;
-}
+        .label-container {
+            margin-bottom: 10px;
+        }
 
-.label-title {
-    font-weight: bold;
-    color: #333;
-}
+        .label-title {
+            font-weight: bold;
+            color: #333;
+        }
 
-.label-value {
-    display: block;
-    margin-left: 10px;
-    color: #555;
-    font-size: 1em;
-}
+        .label-value {
+            display: block;
+            margin-left: 10px;
+            color: #555;
+            font-size: 1em;
+        }
 
-#closePopupButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        #closePopupButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-#closePopupButton:hover {
-    background-color: #0056b3;
-}
-
+            #closePopupButton:hover {
+                background-color: #0056b3;
+            }
     </style>
 </head>
 <body>
@@ -121,7 +121,7 @@
         </nav>
 
         <div class="container-fluid p-5">
-            <asp:GridView ID="GridView1" CssClass="table table-bordered rounded table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="Con_Email" OnRowCommand="GridView1_RowCommand">
+            <asp:GridView ID="GridView1" CssClass="table table-bordered rounded table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="Aadhar_No" OnRowCommand="GridView1_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="V_C_Name" ItemStyle-CssClass="p-2" HeaderText="Vendor Name" />
                     <asp:BoundField DataField="Firm_Name" HeaderText="Firm Name" />
@@ -131,77 +131,79 @@
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>
                             <div>
-                               <asp:Button type="button" class="btn btn-primary btn-sm view-details" 
-                                   ID="Button1" runat="server" CommandName="ViewDetails" 
-                                   CommandArgument='<%# Eval("Con_Email") %>' Text="View Details"
-                                   data-email='<%# Eval("Con_Email") %>' />
-                                <asp:Button type="button" class="btn btn-primary btn-sm" ID="btnViewDetails" runat="server" CommandName="Accept" CommandArgument='<%# Eval("Con_Email") %>' Text="Accept" />
-                                <asp:Button type="button" class="btn btn-danger btn-sm" ID="btnReject" runat="server" CommandName="Reject" CommandArgument='<%# Eval("Con_Email") %>' Text="Reject" />
+                                <asp:Button type="button" class="btn btn-primary btn-sm view-details"
+                                    ID="Button1" runat="server" CommandName="ViewDetails"
+                                    CommandArgument='<%# Eval("Aadhar_No") %>' Text="View Details"
+                                    data-email='<%# Eval("Aadhar_No") %>' />
+                                <asp:Button type="button" class="btn btn-primary btn-sm" ID="btnViewDetails" runat="server" CommandName="Accept" CommandArgument='<%# Eval("Aadhar_No") %>' Text="Accept" />
+                                <asp:Button type="button" class="btn btn-danger btn-sm" ID="btnReject" runat="server" CommandName="Reject" CommandArgument='<%# Eval("Aadhar_No") %>' Text="Reject" />
                             </div>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
             <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
+            <asp:Label ID="filename" runat="server" Text=""></asp:Label>
+
         </div>
 
-       <div id="popupDiv" style="display:none;">
-    <div id="popupContent">
-        <h4>Employee Details</h4>
-        <asp:Label runat="server" ID="lblV_C_Type" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblV_C_Name" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblFirm_Name" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblArea" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblStreet" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblCity" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblTahasil" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblDist" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblState" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblCountry" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblPinCode" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblDom_Foreign" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblCon_Per_Name" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblCon_Number" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblCon_Email" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblConn_Int_Plnt" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblSupp_Type" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblGSTIN_No" Text=""></asp:Label><br />
-        <asp:HyperLink ID="gstlink" runat="server">GST Certificate</asp:HyperLink>
-        <asp:Label runat="server" ID="lblPAN_NO" Text=""></asp:Label><br />
-        <asp:HyperLink ID="panlink" runat="server">pancard</asp:HyperLink><br />
-        <asp:Label runat="server" ID="lblAadhar_No" Text=""></asp:Label><br />
-        <asp:HyperLink ID="adharlink" runat="server">adharcard</asp:HyperLink><br />
-        <asp:Label runat="server" ID="lblMSME_Appr" Text=""></asp:Label><br />
-        <asp:HyperLink ID="msmelink" runat="server">msmecetificate</asp:HyperLink><br />
-        <asp:Label runat="server" ID="lblPay_Term" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblBank_Name" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblBank_Branch" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblBank_IFSC_Code" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblBank_Hol_Name" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblBank_Acc_No" Text=""></asp:Label><br />
-        <asp:Label runat="server" ID="lblV_C_Date" Text=""></asp:Label><br />
-        <asp:HyperLink ID="blankcheck" runat="server">blankcheck</asp:HyperLink>
+        <div id="popupDiv" style="display: none;">
+            <div id="popupContent">
+                <h4>Employee Details</h4>
+                <asp:Label runat="server" ID="lblV_C_Type" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblV_C_Name" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblFirm_Name" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblArea" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblStreet" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblCity" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblTahasil" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblDist" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblState" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblCountry" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblPinCode" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblDom_Foreign" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblCon_Per_Name" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblCon_Number" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblCon_Email" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblConn_Int_Plnt" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblSupp_Type" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblGSTIN_No" Text=""></asp:Label><br />
+                <asp:HyperLink ID="GSTCertificate" runat="server">GST Certificate</asp:HyperLink><br />
+                <asp:Label runat="server" ID="lblPAN_NO" Text=""></asp:Label><br />
+                <asp:HyperLink ID="PanCard" runat="server">pancard</asp:HyperLink><br />
+                <asp:Label runat="server" ID="lblAadhar_No" Text=""></asp:Label><br />
+                <asp:HyperLink ID="AdharCard" runat="server">adharcard</asp:HyperLink><br />
+                <asp:Label runat="server" ID="lblMSME_Appr" Text=""></asp:Label><br />
+                <asp:HyperLink ID="msmelink" runat="server">msmecetificate</asp:HyperLink><br />
+                <asp:Label runat="server" ID="lblPay_Term" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblBank_Name" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblBank_Branch" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblBank_IFSC_Code" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblBank_Hol_Name" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblBank_Acc_No" Text=""></asp:Label><br />
+                <asp:Label runat="server" ID="lblV_C_Date" Text=""></asp:Label><br />
+                <asp:HyperLink ID="CancelledCheque" runat="server">blankcheck</asp:HyperLink><br />
 
-        <button type="button" id="closePopupButton">Close</button>
-    </div>
-</div>
+                <button type="button" id="closePopupButton">Close</button>
+            </div>
+        </div>
 
-<script>
-    function openPopup() {
-        document.getElementById('popupDiv').style.display = 'flex';
-    }
+        <script>
+            function openPopup() {
+                document.getElementById('popupDiv').style.display = 'flex';
+            }
 
-    function closePopup() {
-        document.getElementById('popupDiv').style.display = 'none';
-    }
+            function closePopup() {
+                document.getElementById('popupDiv').style.display = 'none';
+            }
 
-    $(document).ready(function () {
-        $('#closePopupButton').click(function () {
-            closePopup();
-        });
-    });
+            $(document).ready(function () {
+                $('#closePopupButton').click(function () {
+                    closePopup();
+                });
+            });
 
-</script>
+        </script>
 
     </form>
 </body>

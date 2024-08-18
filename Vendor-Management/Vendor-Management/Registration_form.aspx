@@ -40,7 +40,7 @@
         function validateFileUpload(fileInput) {
             console.log("File upload validation triggered");
             const allowedExtensions = /(\.pdf|\.jpeg|\.jpg)$/i;
-            const maxSize = 2 * 1024 * 1024; // 2 MB
+            const maxSize = 2 * 1024 * 1024; 
             const filePath = fileInput.value;
             const fileSize = fileInput.files[0].size;
 
