@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="emailSubmitted.aspx.cs" Inherits="Vendor_Management.emailSubmitted" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="test.aspx.cs" Inherits="Vendor_Management.emailSubmitted" %>
 
 <!DOCTYPE html>
 
