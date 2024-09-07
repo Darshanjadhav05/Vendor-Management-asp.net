@@ -4,6 +4,7 @@
     <EntitySetMapping Name="regional_manager">
       <EntityTypeMapping TypeName="SarangModel1.regional_manager">
         <MappingFragment StoreEntitySet="regional_manager">
+          <ScalarProperty Name="is_blocked" ColumnName="is_blocked" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="region_name" ColumnName="region_name" />
           <ScalarProperty Name="username" ColumnName="username" />

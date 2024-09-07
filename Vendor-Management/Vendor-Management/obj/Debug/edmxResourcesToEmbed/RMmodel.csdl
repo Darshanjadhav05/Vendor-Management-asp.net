@@ -8,6 +8,7 @@
     <Property Name="region_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="is_blocked" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityContainer Name="RMentity" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="regional_manager" EntityType="Self.regional_manager" />

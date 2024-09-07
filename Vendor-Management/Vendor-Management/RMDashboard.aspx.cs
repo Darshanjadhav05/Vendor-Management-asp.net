@@ -30,6 +30,17 @@ namespace Vendor_Management
                     var data = (from i in context.data_entry where i.Conn_Int_Plnt == region select i).ToList();
                     GridView1.DataSource = data;
                     GridView1.DataBind();
+
+                    int pendingcount = context.data_entry.Count(a => a.Conn_Int_Plnt == region);
+                    lblPending.Text =$"Pending Application: {pendingcount}";
+
+                    // Get count of accepted applications
+                    int acceptedCount = context.accepteds.Count(a => a.Conn_Int_Plnt == region);
+                    lblAcceptedCount.Text = $"Accepted Applications: {acceptedCount}";
+
+                    // Get count of rejected applications
+                    int rejectedCount = context.deleteds.Count(d => d.Conn_Int_Plnt == region);
+                    lblRejectedCount.Text = $"Rejected Applications: {rejectedCount}";
                 }
             }
             else

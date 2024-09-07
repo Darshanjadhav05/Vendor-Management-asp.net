@@ -26,6 +26,9 @@ namespace Vendor_Management
                     var data = context.accepteds.Where(i => i.Conn_Int_Plnt == region).ToList();
                     GridView1.DataSource = data;
                     GridView1.DataBind();
+                    int acceptedCount = context.accepteds.Count(a => a.Conn_Int_Plnt == region);
+                    lblAcceptedCount.Text = $"Accepted Applications: {acceptedCount}";
+
                 }
             }
             else

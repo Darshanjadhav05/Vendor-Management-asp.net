@@ -262,12 +262,7 @@
                             <label for="SupplierType" class="col-sm-4 col-form-label">Supplier Type</label>
                             <div class="col-sm-8">
                                 <asp:DropDownList ID="SupplierType" runat="server" CssClass="form-control">
-                                     <asp:ListItem Value="">Please Select</asp:ListItem>
-                                    <asp:ListItem Value="Raw Material">Raw Material</asp:ListItem>
-                                    <asp:ListItem Value="Packing Material">Packing Material</asp:ListItem>
-                                    <asp:ListItem Value="Consumable Material">Consumable Material</asp:ListItem>
-                                    <asp:ListItem Value="Hardware">Hardware</asp:ListItem>
-                                    <asp:ListItem Value="Other">Other</asp:ListItem>
+                                    
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator ID="rfvSupplierType" runat="server" ControlToValidate="SupplierType"
                                     InitialValue="" ErrorMessage="Supplier Type is required" CssClass="text-danger"  Display="Dynamic"  />

@@ -8,6 +8,7 @@
     <Property Name="region_name" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="username" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="is_blocked" Type="bit" Nullable="false" />
   </EntityType>
   <EntityContainer Name="SarangModel1StoreContainer">
     <EntitySet Name="regional_manager" EntityType="Self.regional_manager" Schema="dbo" store:Type="Tables" />

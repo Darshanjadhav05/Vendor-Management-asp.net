@@ -13,10 +13,10 @@ namespace Vendor_Management
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RMentity : DbContext
+    public partial class UserEntities : DbContext
     {
-        public RMentity()
-            : base("name=RMentity")
+        public UserEntities()
+            : base("name=UserEntities")
         {
         }
     
@@ -26,5 +26,7 @@ namespace Vendor_Management
         }
     
         public virtual DbSet<regional_manager> regional_manager { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<SupplierType> SupplierTypes { get; set; }
     }
 }

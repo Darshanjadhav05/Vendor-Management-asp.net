@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SarangModel2StoreContainer" CdmEntityContainer="UserEntities">
+    <EntitySetMapping Name="regional_manager">
+      <EntityTypeMapping TypeName="SarangModel2.regional_manager">
+        <MappingFragment StoreEntitySet="regional_manager">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="region_name" ColumnName="region_name" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="is_blocked" ColumnName="is_blocked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SarangModel2.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="regional_manager_id" ColumnName="regional_manager_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierTypes">
+      <EntityTypeMapping TypeName="SarangModel2.SupplierType">
+        <MappingFragment StoreEntitySet="SupplierTypes">
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

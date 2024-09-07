@@ -12,21 +12,14 @@ namespace Vendor_Management
     using System;
     using System.Collections.Generic;
     
-    public partial class regional_manager
+    public partial class User
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public regional_manager()
-        {
-            this.Users = new HashSet<User>();
-        }
-    
         public int Id { get; set; }
-        public string region_name { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public bool is_blocked { get; set; }
+        public string user_type { get; set; }
+        public Nullable<int> regional_manager_id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users { get; set; }
+        public virtual regional_manager regional_manager { get; set; }
     }
 }

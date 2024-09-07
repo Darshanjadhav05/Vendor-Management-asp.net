@@ -103,24 +103,35 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="RMDashboard.aspx">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="RMAccepted_Applications.aspx">Accepted Applications</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="RMRejected_Applications.aspx">Rejected Applications</a>
-                        </li>
-                    </ul>
-                    <asp:Button ID="Button2" CssClass="btn btn-danger" runat="server" Text="Log Out" OnClick="Button1_Click" />
-                </div>
+               <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="RMDashboard.aspx">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="RMAccepted_Applications.aspx">Accepted Applications</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="RMRejected_Applications.aspx">Rejected Applications</a>
+        </li>
+    </ul>
+    <div class="d-flex">
+        <asp:Button ID="Button2" CssClass="btn btn-danger" runat="server" Text="Log Out" OnClick="Button1_Click" />
+    </div>
+</div>
+
             </div>
         </nav>
 
         <div class="container-fluid p-5">
+                <div class="row mb-3">
+        <div class="col">'
+            <asp:Label ID="lblPending" runat="server" CssClass="badge bg-success"></asp:Label>
+
+            <asp:Label ID="lblAcceptedCount" runat="server" CssClass="badge bg-success"></asp:Label>
+            <asp:Label ID="lblRejectedCount" runat="server" CssClass="badge bg-danger"></asp:Label>
+        </div>
+    </div>
             <asp:GridView ID="GridView1" CssClass="table table-bordered rounded table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="Aadhar_No" OnRowCommand="GridView1_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="V_C_Name" ItemStyle-CssClass="p-2" HeaderText="Vendor Name" />

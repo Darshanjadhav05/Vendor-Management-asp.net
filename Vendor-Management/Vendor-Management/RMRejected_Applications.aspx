@@ -24,11 +24,10 @@
         #popupContent {
             background: white;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 5px;
             width: 80%;
             max-width: 600px;
-            max-height: 90%;
-            overflow: auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         #pdfFrame {
@@ -36,47 +35,6 @@
             height: 500px;
             border: none;
             display: none;
-        }
-
-        #closePopupButton {
-            margin-top: 10px;
-        }
-
-        #popupDiv {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none; /* Hidden by default */
-            justify-content: center;
-            align-items: center;
-        }
-
-        #popupContent {
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .label-container {
-            margin-bottom: 10px;
-        }
-
-        .label-title {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .label-value {
-            display: block;
-            margin-left: 10px;
-            color: #555;
-            font-size: 1em;
         }
 
         #closePopupButton {
@@ -90,9 +48,9 @@
             cursor: pointer;
         }
 
-            #closePopupButton:hover {
-                background-color: #0056b3;
-            }
+        #closePopupButton:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -115,14 +73,16 @@
                             <a class="nav-link active" href="RMRejected_Applications.aspx">Rejected Applications</a>
                         </li>
                     </ul>
-                    <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Log Out" OnClick="Button1_Click" />
+                    <div class="d-flex ms-auto">
+                        <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Log Out" OnClick="Button1_Click" />
+                    </div>
                 </div>
             </div>
         </nav>
 
         <!-- gridview -->
-
         <div class="container-fluid p-5">
+            <asp:Label ID="lblRejectedCount" runat="server" CssClass="badge bg-danger"></asp:Label>
             <asp:GridView ID="GridView1" CssClass="table table-bordered rounded table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="Aadhar_No" OnRowCommand="GridView1_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="V_C_Name" ItemStyle-CssClass="p-2" HeaderText="Vendor Name" />
@@ -133,9 +93,8 @@
                     <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>
                             <div>
-                                <asp:Button type="button" class="btn btn-primary btn-sm view-details" ID="btnViewDetails" runat="server" CommandName="ViewDetails" CommandArgument='<%# Eval("Aadhar_No") %>' Text="View Details" />
-                                <%--<asp:Button type="button" class="btn btn-success btn-sm" ID="btnAccept" runat="server" CommandName="Accept" CommandArgument='<%# Eval("Aadhar_No") %>' Text="Accept" />--%>
-                                <asp:Button type="button" class="btn btn-danger btn-sm" ID="btnReject" runat="server" CommandName="Move to Pending" CommandArgument='<%# Eval("Aadhar_No") %>' Text="Move to Pending" />
+                                <asp:Button type="button" class="btn btn-primary btn-sm" ID="btnViewDetails" runat="server" CommandName="ViewDetails" CommandArgument='<%# Eval("Aadhar_No") %>' Text="View Details" />
+                                <asp:Button type="button" class="btn btn-danger btn-sm" ID="btnReject" runat="server" CommandName="MoveToPending" CommandArgument='<%# Eval("Aadhar_No") %>' Text="Move to Pending" />
                             </div>
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -144,8 +103,8 @@
             <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
         </div>
 
-        <!--popup div-->
-        <div id="popupDiv" style="display: none;">
+        <!-- Popup div -->
+        <div id="popupDiv">
             <div id="popupContent">
                 <h4>Employee Details</h4>
                 <asp:Label runat="server" ID="lblV_C_Type" Text=""></asp:Label><br />
@@ -166,13 +125,13 @@
                 <asp:Label runat="server" ID="lblConn_Int_Plnt" Text=""></asp:Label><br />
                 <asp:Label runat="server" ID="lblSupp_Type" Text=""></asp:Label><br />
                 <asp:Label runat="server" ID="lblGSTIN_No" Text=""></asp:Label><br />
-                <asp:HyperLink ID="gstlink" runat="server">GST Certificate</asp:HyperLink>
+                <asp:HyperLink ID="gstlink" runat="server">GST Certificate</asp:HyperLink><br />
                 <asp:Label runat="server" ID="lblPAN_NO" Text=""></asp:Label><br />
-                <asp:HyperLink ID="panlink" runat="server">pancard</asp:HyperLink><br />
+                <asp:HyperLink ID="panlink" runat="server">Pancard</asp:HyperLink><br />
                 <asp:Label runat="server" ID="lblAadhar_No" Text=""></asp:Label><br />
-                <asp:HyperLink ID="adharlink" runat="server">adharcard</asp:HyperLink><br />
+                <asp:HyperLink ID="adharlink" runat="server">Aadharcard</asp:HyperLink><br />
                 <asp:Label runat="server" ID="lblMSME_Appr" Text=""></asp:Label><br />
-                <asp:HyperLink ID="msmelink" runat="server">msmecetificate</asp:HyperLink><br />
+                <asp:HyperLink ID="msmelink" runat="server">MSME Certificate</asp:HyperLink><br />
                 <asp:Label runat="server" ID="lblPay_Term" Text=""></asp:Label><br />
                 <asp:Label runat="server" ID="lblBank_Name" Text=""></asp:Label><br />
                 <asp:Label runat="server" ID="lblBank_Branch" Text=""></asp:Label><br />
@@ -180,8 +139,7 @@
                 <asp:Label runat="server" ID="lblBank_Hol_Name" Text=""></asp:Label><br />
                 <asp:Label runat="server" ID="lblBank_Acc_No" Text=""></asp:Label><br />
                 <asp:Label runat="server" ID="lblV_C_Date" Text=""></asp:Label><br />
-                <asp:HyperLink ID="blankcheck" runat="server">blankcheck</asp:HyperLink>
-
+                <asp:HyperLink ID="blankcheck" runat="server">Blank Check</asp:HyperLink><br />
                 <button type="button" id="closePopupButton">Close</button>
             </div>
         </div>
@@ -200,10 +158,7 @@
                     closePopup();
                 });
             });
-
         </script>
-
-
     </form>
 </body>
 </html>

@@ -29,6 +29,11 @@ namespace Vendor_Management
                     var data = (from i in context.deleteds where i.Conn_Int_Plnt == region select i).ToList();
                     GridView1.DataSource = data;
                     GridView1.DataBind();
+
+                   
+                    // Get count of rejected applications
+                    int rejectedCount = context.deleteds.Count(d => d.Conn_Int_Plnt == region);
+                    lblRejectedCount.Text = $"Rejected Applications: {rejectedCount}";
                 }
             }
             else

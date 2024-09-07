@@ -7,7 +7,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
+     <style>
+        /* Additional styles here */
+
+        .navbar-nav .nav-item {
+            margin-right: 20px; /* Space between nav items */
+        }
+
+        .navbar-nav .nav-link {
+            margin-right: 10px; /* Space between nav links */
+        }
+
+        .navbar .btn {
+            margin-left: auto; /* Pushes the button to the right */
+        }
+        
         #popupDiv {
             position: fixed;
             top: 0;
@@ -114,13 +128,19 @@
                             <a class="nav-link active" href="RMRejected_Applications.aspx">Rejected Applications</a>
                         </li>
                     </ul>
-                    <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Log Out" OnClick="Button1_Click" />
+                    <div class="d-flex ms-auto">
+                        <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="Log Out" OnClick="Button1_Click" />
+                    </div>
                 </div>
             </div>
         </nav>
 
         <!-- gridview -->
         <div class="container-fluid p-5">
+             <asp:Label ID="lblUsername" runat="server"></asp:Label>
+             
+             <asp:Label ID="lblAcceptedCount" runat="server" CssClass="badge bg-success"></asp:Label>
+
             <asp:GridView ID="GridView1" CssClass="table table-bordered rounded table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="Aadhar_No" OnRowCommand="GridView1_RowCommand">
                 <Columns>
                     <asp:BoundField DataField="V_C_Name" ItemStyle-CssClass="p-2" HeaderText="Vendor Name" />

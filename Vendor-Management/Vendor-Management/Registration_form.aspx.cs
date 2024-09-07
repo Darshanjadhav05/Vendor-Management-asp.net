@@ -15,8 +15,24 @@ namespace Vendor_Management
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                BindDropDownList();
+            }
         }
-      
+        private void BindDropDownList()
+        {
+            using (var context = new UserEntities()) // Replace with your DbContext
+            {
+                var supplierTypes = context.SupplierTypes.ToList();
+                SupplierType.DataSource = supplierTypes;
+                SupplierType.DataTextField = "TypeName";
+                SupplierType.DataValueField = "TypeName";
+                SupplierType.DataBind();
+
+                SupplierType.Items.Insert(0, new ListItem("Please Select", ""));
+            }
+        }
         protected void NextButton1_Click(object sender, EventArgs e)
         {
         }
